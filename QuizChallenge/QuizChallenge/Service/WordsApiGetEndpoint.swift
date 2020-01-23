@@ -13,7 +13,7 @@ enum WordsApiGetEndpoint {
 }
 
 extension WordsApiGetEndpoint {
-    static let baseUrl = "https://codechallenge.arctouch.com/1"
+    static let baseUrl = "https://codechallenge.arctouch.com"
 
     var path: String {
         switch self {
@@ -37,9 +37,9 @@ extension WordsApiGetEndpoint {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
 
-        for header in headers {
-            request.addValue(header.value, forHTTPHeaderField: header.key)
-        }
+//        for header in headers {
+//            request.addValue(header.value, forHTTPHeaderField: header.key)
+//        }
 
         return request
     }

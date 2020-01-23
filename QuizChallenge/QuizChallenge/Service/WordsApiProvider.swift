@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class EventsApiProvider {
+final class WordsApiProvider {
     let session: URLSession
     
     init(session: URLSession = .shared) {

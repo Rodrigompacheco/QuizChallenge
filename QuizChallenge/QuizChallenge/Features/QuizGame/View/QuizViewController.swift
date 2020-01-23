@@ -8,13 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class QuizViewController: UIViewController {
+    
+    var presenter: QuizPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        presenter = QuizPresenter()
     }
 
 
 }
-
