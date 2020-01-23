@@ -23,9 +23,7 @@ class QuizPresenter {
 
             switch result {
             case .success(let quiz):
-                let eventViewModels = quiz
-                
-                self?.setup(with: eventViewModels)
+                self?.setup(with: quiz)
             case .failure:
                 print("FALHO O LOAD")
 //                self?.setup(with: )
