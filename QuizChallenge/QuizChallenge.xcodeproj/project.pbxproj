@@ -19,6 +19,7 @@
 		41E8423223DA4AD300303FA7 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8423123DA4AD300303FA7 /* Quiz.swift */; };
 		41E8423423DA4B4F00303FA7 /* QuizPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8423323DA4B4F00303FA7 /* QuizPresenter.swift */; };
 		41E8423623DA5BEB00303FA7 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E8423523DA5BEB00303FA7 /* QuizViewController.xib */; };
+		41E8423A23DA655700303FA7 /* CustomColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41E8423923DA655700303FA7 /* CustomColors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		41E8423123DA4AD300303FA7 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Quiz.swift; path = QuizChallenge/Features/QuizGame/Quiz.swift; sourceTree = SOURCE_ROOT; };
 		41E8423323DA4B4F00303FA7 /* QuizPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPresenter.swift; sourceTree = "<group>"; };
 		41E8423523DA5BEB00303FA7 /* QuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
+		41E8423923DA655700303FA7 /* CustomColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CustomColors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				41409BB423DA480E008671C6 /* AppDelegate.swift */,
 				41409BB623DA480E008671C6 /* SceneDelegate.swift */,
 				41409BBD23DA480F008671C6 /* Assets.xcassets */,
+				41E8423923DA655700303FA7 /* CustomColors.xcassets */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E8423A23DA655700303FA7 /* CustomColors.xcassets in Resources */,
 				41409BC123DA480F008671C6 /* LaunchScreen.storyboard in Resources */,
 				41409BBE23DA480F008671C6 /* Assets.xcassets in Resources */,
 				41409BBC23DA480E008671C6 /* Main.storyboard in Resources */,
