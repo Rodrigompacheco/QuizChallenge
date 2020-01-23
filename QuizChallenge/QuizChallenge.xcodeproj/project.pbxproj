@@ -56,15 +56,95 @@
 		41409BB323DA480E008671C6 /* QuizChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				41409BB423DA480E008671C6 /* AppDelegate.swift */,
-				41409BB623DA480E008671C6 /* SceneDelegate.swift */,
-				41409BB823DA480E008671C6 /* ViewController.swift */,
-				41409BBA23DA480E008671C6 /* Main.storyboard */,
-				41409BBD23DA480F008671C6 /* Assets.xcassets */,
-				41409BBF23DA480F008671C6 /* LaunchScreen.storyboard */,
+				41409BCB23DA4887008671C6 /* DataSource */,
+				41409BC823DA485B008671C6 /* Service */,
+				41409BC923DA4864008671C6 /* Features */,
+				41409BCD23DA489A008671C6 /* Storyboards */,
+				41409BCC23DA488E008671C6 /* Fonts */,
+				41409BCA23DA486E008671C6 /* SupportingFiles */,
 				41409BC223DA480F008671C6 /* Info.plist */,
 			);
 			path = QuizChallenge;
+			sourceTree = "<group>";
+		};
+		41409BC823DA485B008671C6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		41409BC923DA4864008671C6 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				41409BCE23DA48CF008671C6 /* QuizGame */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		41409BCA23DA486E008671C6 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				41409BB423DA480E008671C6 /* AppDelegate.swift */,
+				41409BB623DA480E008671C6 /* SceneDelegate.swift */,
+				41409BBD23DA480F008671C6 /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		41409BCB23DA4887008671C6 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		41409BCC23DA488E008671C6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		41409BCD23DA489A008671C6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				41409BBA23DA480E008671C6 /* Main.storyboard */,
+				41409BBF23DA480F008671C6 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		41409BCE23DA48CF008671C6 /* QuizGame */ = {
+			isa = PBXGroup;
+			children = (
+				41409BCF23DA48DB008671C6 /* Model */,
+				41409BD023DA48E1008671C6 /* Presenter */,
+				41409BD123DA48E8008671C6 /* View */,
+			);
+			path = QuizGame;
+			sourceTree = "<group>";
+		};
+		41409BCF23DA48DB008671C6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		41409BD023DA48E1008671C6 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		41409BD123DA48E8008671C6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				41409BB823DA480E008671C6 /* ViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
