@@ -15,6 +15,7 @@
 		41409BC123DA480F008671C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41409BBF23DA480F008671C6 /* LaunchScreen.storyboard */; };
 		41409BD323DA494F008671C6 /* WordsApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41409BD223DA494F008671C6 /* WordsApiError.swift */; };
 		41409BD523DA496F008671C6 /* WordsApiGetEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41409BD423DA496F008671C6 /* WordsApiGetEndpoint.swift */; };
+		41409BD723DA4987008671C6 /* EventsApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41409BD623DA4987008671C6 /* EventsApiProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		41409BC223DA480F008671C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41409BD223DA494F008671C6 /* WordsApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsApiError.swift; sourceTree = "<group>"; };
 		41409BD423DA496F008671C6 /* WordsApiGetEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsApiGetEndpoint.swift; sourceTree = "<group>"; };
+		41409BD623DA4987008671C6 /* EventsApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsApiProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				41409BD223DA494F008671C6 /* WordsApiError.swift */,
 				41409BD423DA496F008671C6 /* WordsApiGetEndpoint.swift */,
+				41409BD623DA4987008671C6 /* EventsApiProvider.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41409BD723DA4987008671C6 /* EventsApiProvider.swift in Sources */,
 				41409BB923DA480E008671C6 /* ViewController.swift in Sources */,
 				41409BD523DA496F008671C6 /* WordsApiGetEndpoint.swift in Sources */,
 				41409BD323DA494F008671C6 /* WordsApiError.swift in Sources */,
