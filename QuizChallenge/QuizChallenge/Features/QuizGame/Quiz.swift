@@ -15,8 +15,8 @@ struct Quiz: Codable {
     
     // MARK: - Codable
     private enum CodingKeys: String, CodingKey {
-        case question
-        case answers
+        case question = "question"
+        case answers = "answer"
     }
     
     // MARK: - Init
@@ -24,7 +24,7 @@ struct Quiz: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         question = try container.decode(String.self, forKey: .question)
-        answers = [try container.decode(String.self, forKey: .answers)]
+        answers = try container.decode([String].self, forKey: .answers)
     }
 }
 
