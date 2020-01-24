@@ -17,4 +17,5 @@ let loadingViewCornerRadius: CGFloat = 20
 // Mark: tags
 let loadingViewTag: Int = 1
 
-
+// Mark: CoundDownTimer
+let initialTimeSecods: Int = 300

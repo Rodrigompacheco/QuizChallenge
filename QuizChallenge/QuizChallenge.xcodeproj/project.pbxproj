@@ -29,6 +29,7 @@
 		41E8425C23DB598E00303FA7 /* KeyboardObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8425B23DB598E00303FA7 /* KeyboardObservable.swift */; };
 		41E8425E23DB5A7500303FA7 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8425D23DB5A7500303FA7 /* NSObjectExtension.swift */; };
 		41E8426023DB61EB00303FA7 /* UIVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8425F23DB61EB00303FA7 /* UIVIewController.swift */; };
+		41E8426423DB735000303FA7 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8426223DB6ED600303FA7 /* CountDownTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		41E8425B23DB598E00303FA7 /* KeyboardObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObservable.swift; sourceTree = "<group>"; };
 		41E8425D23DB5A7500303FA7 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		41E8425F23DB61EB00303FA7 /* UIVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewController.swift; sourceTree = "<group>"; };
+		41E8426223DB6ED600303FA7 /* CountDownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				41E8424D23DAB92D00303FA7 /* LoadingView */,
+				41E8426223DB6ED600303FA7 /* CountDownTimer.swift */,
 				41E8424023DA9E8800303FA7 /* CustomTextField.swift */,
 			);
 			path = CustomComponents;
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41E8426423DB735000303FA7 /* CountDownTimer.swift in Sources */,
 				41409BD723DA4987008671C6 /* WordsApiProvider.swift in Sources */,
 				41E8425E23DB5A7500303FA7 /* NSObjectExtension.swift in Sources */,
 				41E8425A23DAD32800303FA7 /* UIActivityIndicatorViewExtension.swift in Sources */,

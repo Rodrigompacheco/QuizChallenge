@@ -67,3 +67,9 @@ extension QuizPresenter: QuizViewControllerDelegate {
         print("START TIME PRESSED")
     }
 }
+
+extension QuizPresenter: CountDownTimerDelegate {
+    func timeOut() {
+        //Body
+    }
+}
