@@ -11,6 +11,9 @@ import UIKit
 
 protocol QuizPresenterDelegate: class {
     func reloadAnswers()
+    func showLoadingView()
+    func hideLoadingView()
+    func updateQuestion(to question: String)
 }
 
 class QuizPresenter {
@@ -18,11 +21,11 @@ class QuizPresenter {
     var quiz: Quiz?
     weak var delegate: QuizPresenterDelegate?
     
-    init() {
-        load()
-    }
+    init() {}
     
     func load() {
+        delegate?.showLoadingView()
+        
         let apiProvider = WordsApiProvider()
         apiProvider.request(for: WordsApiGetEndpoint.words) { [weak self] (result: Result<Quiz, Error>) in
             switch result {
@@ -30,6 +33,7 @@ class QuizPresenter {
                 self?.setup(with: quiz)
             case .failure:
                 print("FALHO O LOAD")
+                self?.delegate?.hideLoadingView()
             }
         }
     }
@@ -37,6 +41,10 @@ class QuizPresenter {
     private func setup(with quiz: Quiz) {
         DispatchQueue.main.async {
             self.quiz = quiz
+            self.delegate?.hideLoadingView()
+            if let quiz = self.quiz {
+                self.delegate?.updateQuestion(to: quiz.question)
+            }
             self.delegate?.reloadAnswers()
         }
     }

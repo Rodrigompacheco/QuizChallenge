@@ -9,5 +9,10 @@
 import Foundation
 import UIKit
 
+// Mark: cornerRadius
 let bottomButtonCornerRadius: CGFloat = 10
 let textFieldCornerRadius: CGFloat = 10
+let loadingViewCornerRadius: CGFloat = 20
+
+// Mark: tags
+let loadingViewTag: Int = 1

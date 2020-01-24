@@ -13,6 +13,7 @@
                 <outlet property="answersTableView" destination="lst-AC-mK3" id="9FP-Eh-S3n"/>
                 <outlet property="insertWordTextField" destination="fBD-Uk-sWR" id="JuY-8h-6Z2"/>
                 <outlet property="numberOfHitsLabel" destination="DA3-LD-gE6" id="QxK-09-29J"/>
+                <outlet property="questionLabel" destination="lnm-7Y-drE" id="cMY-yX-9bf"/>
                 <outlet property="startTimerButton" destination="q6I-w6-ROh" id="fDC-Ho-FXM"/>
                 <outlet property="timerLabel" destination="Cp4-yc-3DF" id="AF9-gL-hJU"/>
                 <outlet property="view" destination="AJt-x3-Bga" id="V19-75-2O0"/>
@@ -23,14 +24,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are all the java keywords?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnm-7Y-drE">
-                    <rect key="frame" x="16" y="88" width="382" height="81.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnm-7Y-drE">
+                    <rect key="frame" x="16" y="88" width="382" height="0.0"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insert Word" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fBD-Uk-sWR" customClass="CustomTextField" customModule="QuizChallenge" customModuleProvider="target">
-                    <rect key="frame" x="16" y="189.5" width="382" height="50"/>
+                    <rect key="frame" x="16" y="108" width="382" height="50"/>
                     <color key="backgroundColor" name="QC_LightGray"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="FkX-gQ-0SW"/>
@@ -39,7 +40,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lst-AC-mK3">
-                    <rect key="frame" x="16" y="244.5" width="382" height="481.5"/>
+                    <rect key="frame" x="16" y="163" width="382" height="563"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxa-jM-1Nu">
