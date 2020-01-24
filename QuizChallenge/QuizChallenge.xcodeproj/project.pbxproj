@@ -23,6 +23,8 @@
 		41E8424123DA9E8800303FA7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8424023DA9E8800303FA7 /* CustomTextField.swift */; };
 		41E8424423DAA2A200303FA7 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E8424323DAA2A200303FA7 /* AnswerTableViewCell.xib */; };
 		41E8424623DAA2B800303FA7 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8424523DAA2B800303FA7 /* AnswerTableViewCell.swift */; };
+		41E8424823DAA4F400303FA7 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8424723DAA4F400303FA7 /* TableViewDataSource.swift */; };
+		41E8424C23DAA63800303FA7 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8424B23DAA63800303FA7 /* UITableViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		41E8424023DA9E8800303FA7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		41E8424323DAA2A200303FA7 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
 		41E8424523DAA2B800303FA7 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
+		41E8424723DAA4F400303FA7 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		41E8424B23DAA63800303FA7 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 			children = (
 				41E8423B23DA815E00303FA7 /* CustomComponents */,
 				41409BCB23DA4887008671C6 /* DataSource */,
+				41E8424A23DAA61900303FA7 /* Extensions */,
 				41409BCC23DA488E008671C6 /* Fonts */,
 				41409BC923DA4864008671C6 /* Features */,
 				41409BC823DA485B008671C6 /* Service */,
@@ -121,6 +126,7 @@
 		41409BCB23DA4887008671C6 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				41E8424723DAA4F400303FA7 /* TableViewDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -191,6 +197,14 @@
 				41E8424323DAA2A200303FA7 /* AnswerTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		41E8424A23DAA61900303FA7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				41E8424B23DAA63800303FA7 /* UITableViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +286,8 @@
 				41E8423223DA4AD300303FA7 /* Quiz.swift in Sources */,
 				41E8424123DA9E8800303FA7 /* CustomTextField.swift in Sources */,
 				41409BD523DA496F008671C6 /* WordsApiGetEndpoint.swift in Sources */,
+				41E8424C23DAA63800303FA7 /* UITableViewExtension.swift in Sources */,
+				41E8424823DAA4F400303FA7 /* TableViewDataSource.swift in Sources */,
 				41409BD323DA494F008671C6 /* WordsApiError.swift in Sources */,
 				41409BB523DA480E008671C6 /* AppDelegate.swift in Sources */,
 				41409BB723DA480E008671C6 /* SceneDelegate.swift in Sources */,

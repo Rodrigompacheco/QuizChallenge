@@ -10,7 +10,11 @@ import UIKit
 
 class QuizViewController: UIViewController {
     
-    @IBOutlet weak var answersTableView: UITableView!
+    @IBOutlet weak var answersTableView: UITableView! {
+        didSet {
+            answersTableView.register(AnswerTableViewCell.self, forCellReuseIdentifier: AnswerTableViewCell.description())
+        }
+    }
     @IBOutlet weak var numberOfHitsLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startTimerButton: UIButton!
