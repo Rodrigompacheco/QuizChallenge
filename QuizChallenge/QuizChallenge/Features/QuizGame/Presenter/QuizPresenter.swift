@@ -14,11 +14,16 @@ protocol QuizPresenterDelegate: class {
     func showLoadingView()
     func hideLoadingView()
     func updateQuestion(to question: String)
+    func updateTextButton(to text: String)
+    func startTimer()
+    func stopTimer()
+    func resetTimer()
 }
 
 class QuizPresenter {
     
     var quiz: Quiz?
+    var isTimerRunnig = false
     weak var delegate: QuizPresenterDelegate?
     
     init() {}
@@ -64,7 +69,15 @@ class QuizPresenter {
 
 extension QuizPresenter: QuizViewControllerDelegate {
     func startTimerPressed() {
-        print("START TIME PRESSED")
+        if isTimerRunnig {
+            delegate?.resetTimer()
+            delegate?.updateTextButton(to: startTitleButton)
+            isTimerRunnig = false
+        } else {
+            delegate?.startTimer()
+            delegate?.updateTextButton(to: resetTitleButton)
+            isTimerRunnig = true
+        }
     }
 }
 

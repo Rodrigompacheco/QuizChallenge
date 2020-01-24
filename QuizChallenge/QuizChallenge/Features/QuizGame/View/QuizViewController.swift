@@ -65,7 +65,6 @@ class QuizViewController: UIViewController, KeyboardObservable {
     }
 
     @IBAction func startOrStopTimer(_ sender: Any) {
-        timerLabel.startTimer()
         delegate?.startTimerPressed()
     }
 }
@@ -89,6 +88,22 @@ extension QuizViewController: UITableViewDataSource {
 }
 
 extension QuizViewController: QuizPresenterDelegate {
+    func startTimer() {
+        timerLabel.startTimer()
+    }
+    
+    func stopTimer() {
+        timerLabel.stopTimer()
+    }
+    
+    func resetTimer() {
+        timerLabel.resetTimer()
+    }
+    
+    func updateTextButton(to text: String) {
+        startTimerButton.setTitle(text, for: .normal)
+    }
+    
     func updateQuestion(to question: String) {
         questionLabel.text = question
     }
