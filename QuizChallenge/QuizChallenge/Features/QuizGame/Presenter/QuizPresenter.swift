@@ -15,15 +15,22 @@ protocol QuizPresenterDelegate: class {
     func hideLoadingView()
     func updateQuestion(to question: String)
     func updateTextButton(to text: String)
+    func updateNumberOfHits(to text: String)
     func startTimer()
     func stopTimer()
     func resetTimer()
+    func cleanTextField()
+    func showDialog(with title: String, message: String, titleButton: String)
 }
 
 class QuizPresenter {
     
     var quiz: Quiz?
+    var totalAnswers: Int = 0
+    var userAnswers: [String] = []
     var isTimerRunnig = false
+    var numberOfHits = 0
+    
     weak var delegate: QuizPresenterDelegate?
     
     init() {}
@@ -49,21 +56,52 @@ class QuizPresenter {
             self.delegate?.hideLoadingView()
             if let quiz = self.quiz {
                 self.delegate?.updateQuestion(to: quiz.question)
+                self.totalAnswers = quiz.answers.count
             }
-            self.delegate?.reloadAnswers()
         }
     }
     
+    private func resetQuiz() {
+        userAnswers = []
+        numberOfHits = 0
+        
+    }
+    private func updateComponents() {
+        delegate?.cleanTextField()
+        delegate?.reloadAnswers()
+        delegate?.updateNumberOfHits(to: "\(numberOfHits)/\(totalAnswers)")
+    }
     func getNumberOfAnswers() -> Int {
-        guard let quiz = quiz else { return 0 }
-        return quiz.answers.count
+        return userAnswers.count
     }
     
     func getAnswer(at index: Int) -> String {
-        if let quiz = quiz, let answer = quiz.getAnswer(at: index) {
-            return answer
+        guard index < userAnswers.count else { return "" }
+        return userAnswers[index]
+    }
+    
+    func validateAnswer(answer: String) {
+        guard let quiz = quiz else { return }
+        
+        if !isTimerRunnig {
+            delegate?.showDialog(with: mustStartTimerTitle, message: mustStartTimerMessage, titleButton: "Ok")
+            return
         }
-        return ""
+        
+        let trimmedAnswer = answer.trimmingCharacters(in: .whitespaces).lowercased()
+        
+        if userAnswers.contains(trimmedAnswer) {
+            delegate?.showDialog(with: wordAlreadyAddedTitle, message: wordAlreadyAddedMessage, titleButton: "Ok")
+            return
+        }
+        
+        if quiz.answers.contains(trimmedAnswer) {
+            userAnswers.append(trimmedAnswer)
+            numberOfHits += 1
+            updateComponents()
+        } else {
+            delegate?.showDialog(with: isNotAKeywordTitle, message: isNotAKeywordMessage, titleButton: "Ok")
+        }
     }
 }
 
@@ -72,6 +110,9 @@ extension QuizPresenter: QuizViewControllerDelegate {
         if isTimerRunnig {
             delegate?.resetTimer()
             delegate?.updateTextButton(to: startTitleButton)
+            resetQuiz()
+            load()
+            updateComponents()
             isTimerRunnig = false
         } else {
             delegate?.startTimer()

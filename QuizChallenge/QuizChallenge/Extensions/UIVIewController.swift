@@ -19,3 +19,15 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+
+extension UIViewController {
+    func showSimpleAlert(withTitle tile: String?, andMessage message: String, buttonTitle: String) {
+        let alert = UIAlertController(title: tile ?? "", message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: { (action: UIAlertAction!) in
+            
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+}

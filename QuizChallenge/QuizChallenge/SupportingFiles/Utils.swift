@@ -23,4 +23,12 @@ let initialTimeSecods: Int = 300
 // Mark: Strings
 let startTitleButton: String = "Start"
 let resetTitleButton: String = "Reset"
+/// Dialog Messages
+let isNotAKeywordTitle: String = "Ops!"
+let isNotAKeywordMessage: String = "This answer isn't a keyword"
 
+let mustStartTimerTitle: String = "Warning"
+let mustStartTimerMessage: String = "You must Start timer"
+
+let wordAlreadyAddedTitle: String = "Warning"
+let wordAlreadyAddedMessage: String = "This word was already added"

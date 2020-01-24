@@ -47,6 +47,7 @@ class QuizViewController: UIViewController, KeyboardObservable {
     
     private func setupComponents() {
         answersTableView.dataSource = self
+        insertWordTextField.delegate = self
         startTimerButton.layer.cornerRadius = bottomButtonCornerRadius
         insertWordTextField.layer.cornerRadius = textFieldCornerRadius
     }
@@ -87,7 +88,17 @@ extension QuizViewController: UITableViewDataSource {
     }
 }
 
+extension QuizViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let text = textField.text {
+            presenter?.validateAnswer(answer: text)
+        }
+        return true
+    }
+}
+
 extension QuizViewController: QuizPresenterDelegate {
+    
     func startTimer() {
         timerLabel.startTimer()
     }
@@ -98,6 +109,18 @@ extension QuizViewController: QuizPresenterDelegate {
     
     func resetTimer() {
         timerLabel.resetTimer()
+    }
+    
+    func cleanTextField() {
+        insertWordTextField.text = ""
+    }
+    
+    func showDialog(with title: String, message: String, titleButton: String) {
+        self.showSimpleAlert(withTitle: title, andMessage: message, buttonTitle: titleButton)
+    }
+    
+    func updateNumberOfHits(to text: String) {
+        numberOfHitsLabel.text = text
     }
     
     func updateTextButton(to text: String) {
