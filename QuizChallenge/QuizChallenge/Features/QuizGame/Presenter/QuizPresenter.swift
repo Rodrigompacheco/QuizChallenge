@@ -9,34 +9,61 @@
 import Foundation
 import UIKit
 
+protocol QuizPresenterDelegate: class {
+    func reloadAnswers()
+    func showLoadingView()
+    func hideLoadingView()
+    func updateQuestion(to question: String)
+}
+
 class QuizPresenter {
     
     var quiz: Quiz?
+    weak var delegate: QuizPresenterDelegate?
     
-    init() {
-        load()
-    }
+    init() {}
     
     func load() {
+        delegate?.showLoadingView()
+        
         let apiProvider = WordsApiProvider()
         apiProvider.request(for: WordsApiGetEndpoint.words) { [weak self] (result: Result<Quiz, Error>) in
-
             switch result {
             case .success(let quiz):
                 self?.setup(with: quiz)
             case .failure:
                 print("FALHO O LOAD")
-//                self?.setup(with: )
+                self?.delegate?.hideLoadingView()
             }
         }
     }
     
     private func setup(with quiz: Quiz) {
         DispatchQueue.main.async {
-            let question: String = quiz.question
-            print("QUESTIOOOOON:    ", quiz.question)
-            let words: [String] = quiz.answers
-            print("ANSWERRRRRRR:    ", quiz.answers)
+            self.quiz = quiz
+            self.delegate?.hideLoadingView()
+            if let quiz = self.quiz {
+                self.delegate?.updateQuestion(to: quiz.question)
+            }
+            self.delegate?.reloadAnswers()
         }
+    }
+    
+    func getNumberOfAnswers() -> Int {
+        guard let quiz = quiz else { return 0 }
+        return quiz.answers.count
+    }
+    
+    func getAnswer(at index: Int) -> String {
+        if let quiz = quiz, let answer = quiz.getAnswer(at: index) {
+            return answer
+        }
+        return ""
+    }
+}
+
+extension QuizPresenter: QuizViewControllerDelegate {
+    func startTimerPressed() {
+        print("START TIME PRESSED")
     }
 }

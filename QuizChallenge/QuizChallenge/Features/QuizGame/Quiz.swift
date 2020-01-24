@@ -26,5 +26,10 @@ struct Quiz: Codable {
         question = try container.decode(String.self, forKey: .question)
         answers = try container.decode([String].self, forKey: .answers)
     }
+    
+    func getAnswer(at index: Int) -> String? {
+        guard index < answers.count else { return nil }
+        return answers[index]
+    }
 }
 
