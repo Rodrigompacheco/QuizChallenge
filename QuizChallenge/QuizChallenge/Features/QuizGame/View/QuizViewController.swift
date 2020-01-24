@@ -21,7 +21,7 @@ class QuizViewController: UIViewController, KeyboardObservable {
     }
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var numberOfHitsLabel: UILabel!
-    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var timerLabel: CountDownTimer!
     @IBOutlet weak var startTimerButton: UIButton!
     @IBOutlet weak var insertWordTextField: CustomTextField!
     @IBOutlet weak var botttomViewBottomConstraint: NSLayoutConstraint!
@@ -41,6 +41,7 @@ class QuizViewController: UIViewController, KeyboardObservable {
         presenter = QuizPresenter()
         presenter?.delegate = self
         delegate = presenter
+        timerLabel.delegate = presenter
         presenter?.load()
     }
     
@@ -64,6 +65,7 @@ class QuizViewController: UIViewController, KeyboardObservable {
     }
 
     @IBAction func startOrStopTimer(_ sender: Any) {
+        timerLabel.startTimer()
         delegate?.startTimerPressed()
     }
 }
