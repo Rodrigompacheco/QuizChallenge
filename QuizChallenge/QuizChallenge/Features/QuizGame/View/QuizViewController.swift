@@ -12,7 +12,7 @@ protocol QuizViewControllerDelegate: class {
     func startTimerPressed()
 }
 
-class QuizViewController: UIViewController {
+class QuizViewController: UIViewController, KeyboardObservable {
     
     @IBOutlet weak var answersTableView: UITableView! {
         didSet {
@@ -24,6 +24,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startTimerButton: UIButton!
     @IBOutlet weak var insertWordTextField: CustomTextField!
+    @IBOutlet weak var botttomViewBottomConstraint: NSLayoutConstraint!
     
     var presenter: QuizPresenter?
     weak var delegate: QuizViewControllerDelegate?
@@ -33,6 +34,7 @@ class QuizViewController: UIViewController {
 
         setupPresenter()
         setupComponents()
+        setupKeyboardHandlers()
     }
     
     private func setupPresenter() {
@@ -46,6 +48,19 @@ class QuizViewController: UIViewController {
         answersTableView.dataSource = self
         startTimerButton.layer.cornerRadius = bottomButtonCornerRadius
         insertWordTextField.layer.cornerRadius = textFieldCornerRadius
+    }
+    
+    private func setupKeyboardHandlers() {
+        self.hideKeyboardWhenTappedAround()
+        
+        keyboardWillShowNotification(answersTableView) { [botttomViewBottomConstraint] keyboardSize in
+            guard let keyboardHeight = keyboardSize?.height else { return }
+            botttomViewBottomConstraint?.constant = -keyboardHeight
+        }
+        
+        keyboardWillHideNotification(answersTableView) { [botttomViewBottomConstraint] _ in
+            botttomViewBottomConstraint?.constant = 0
+        }
     }
 
     @IBAction func startOrStopTimer(_ sender: Any) {

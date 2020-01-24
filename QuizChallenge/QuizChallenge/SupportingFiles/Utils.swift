@@ -16,3 +16,5 @@ let loadingViewCornerRadius: CGFloat = 20
 
 // Mark: tags
 let loadingViewTag: Int = 1
+
+

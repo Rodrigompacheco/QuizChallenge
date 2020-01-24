@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuizViewController" customModule="QuizChallenge" customModuleProvider="target">
             <connections>
                 <outlet property="answersTableView" destination="lst-AC-mK3" id="9FP-Eh-S3n"/>
+                <outlet property="botttomViewBottomConstraint" destination="yVS-nJ-G7L" id="JkH-PR-pRC"/>
                 <outlet property="insertWordTextField" destination="fBD-Uk-sWR" id="JuY-8h-6Z2"/>
                 <outlet property="numberOfHitsLabel" destination="DA3-LD-gE6" id="QxK-09-29J"/>
                 <outlet property="questionLabel" destination="lnm-7Y-drE" id="cMY-yX-9bf"/>
@@ -40,7 +41,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lst-AC-mK3">
-                    <rect key="frame" x="16" y="163" width="382" height="563"/>
+                    <rect key="frame" x="16" y="163" width="382" height="579"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nxa-jM-1Nu">
@@ -96,8 +97,8 @@
                 <constraint firstItem="lst-AC-mK3" firstAttribute="leading" secondItem="5Kk-9N-Zjb" secondAttribute="leading" constant="16" id="CTl-kq-JXt"/>
                 <constraint firstItem="5Kk-9N-Zjb" firstAttribute="trailing" secondItem="nxa-jM-1Nu" secondAttribute="trailing" id="Cmz-Y7-88e"/>
                 <constraint firstItem="5Kk-9N-Zjb" firstAttribute="trailing" secondItem="lst-AC-mK3" secondAttribute="trailing" constant="16" id="CyN-kh-QdF"/>
-                <constraint firstItem="nxa-jM-1Nu" firstAttribute="top" secondItem="lst-AC-mK3" secondAttribute="bottom" constant="16" id="KzO-LO-yRf"/>
                 <constraint firstItem="lst-AC-mK3" firstAttribute="top" secondItem="fBD-Uk-sWR" secondAttribute="bottom" constant="5" id="Lcm-Mx-Rdv"/>
+                <constraint firstItem="nxa-jM-1Nu" firstAttribute="top" secondItem="lst-AC-mK3" secondAttribute="bottom" id="Rzq-i4-p9a"/>
                 <constraint firstItem="lnm-7Y-drE" firstAttribute="leading" secondItem="5Kk-9N-Zjb" secondAttribute="leading" constant="16" id="nqK-Ey-e37"/>
                 <constraint firstItem="nxa-jM-1Nu" firstAttribute="leading" secondItem="5Kk-9N-Zjb" secondAttribute="leading" id="vJ0-u1-bZJ"/>
                 <constraint firstItem="nxa-jM-1Nu" firstAttribute="bottom" secondItem="AJt-x3-Bga" secondAttribute="bottom" id="yVS-nJ-G7L"/>
