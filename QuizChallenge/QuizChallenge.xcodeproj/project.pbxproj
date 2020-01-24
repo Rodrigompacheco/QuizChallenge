@@ -21,6 +21,8 @@
 		41E8423A23DA655700303FA7 /* CustomColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41E8423923DA655700303FA7 /* CustomColors.xcassets */; };
 		41E8423F23DA99C400303FA7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8423E23DA99C400303FA7 /* Utils.swift */; };
 		41E8424123DA9E8800303FA7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8424023DA9E8800303FA7 /* CustomTextField.swift */; };
+		41E8424423DAA2A200303FA7 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E8424323DAA2A200303FA7 /* AnswerTableViewCell.xib */; };
+		41E8424623DAA2B800303FA7 /* AnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8424523DAA2B800303FA7 /* AnswerTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		41E8423923DA655700303FA7 /* CustomColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CustomColors.xcassets; sourceTree = "<group>"; };
 		41E8423E23DA99C400303FA7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		41E8424023DA9E8800303FA7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		41E8424323DAA2A200303FA7 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
+		41E8424523DAA2B800303FA7 /* AnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 		41409BD123DA48E8008671C6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				41E8424223DAA23300303FA7 /* Cell */,
 				41409BB823DA480E008671C6 /* QuizViewController.swift */,
 				41E8423523DA5BEB00303FA7 /* QuizViewController.xib */,
 			);
@@ -177,6 +182,15 @@
 				41E8424023DA9E8800303FA7 /* CustomTextField.swift */,
 			);
 			path = CustomComponents;
+			sourceTree = "<group>";
+		};
+		41E8424223DAA23300303FA7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				41E8424523DAA2B800303FA7 /* AnswerTableViewCell.swift */,
+				41E8424323DAA2A200303FA7 /* AnswerTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +253,7 @@
 			files = (
 				41E8423A23DA655700303FA7 /* CustomColors.xcassets in Resources */,
 				41409BC123DA480F008671C6 /* LaunchScreen.storyboard in Resources */,
+				41E8424423DAA2A200303FA7 /* AnswerTableViewCell.xib in Resources */,
 				41409BBE23DA480F008671C6 /* Assets.xcassets in Resources */,
 				41E8423623DA5BEB00303FA7 /* QuizViewController.xib in Resources */,
 			);
@@ -260,6 +275,7 @@
 				41409BD323DA494F008671C6 /* WordsApiError.swift in Sources */,
 				41409BB523DA480E008671C6 /* AppDelegate.swift in Sources */,
 				41409BB723DA480E008671C6 /* SceneDelegate.swift in Sources */,
+				41E8424623DAA2B800303FA7 /* AnswerTableViewCell.swift in Sources */,
 				41E8423423DA4B4F00303FA7 /* QuizPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
