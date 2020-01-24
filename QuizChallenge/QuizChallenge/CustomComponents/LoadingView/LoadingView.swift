@@ -39,7 +39,7 @@ class LoadingView: UIView {
     
     func loadViewFromNib() -> UIView {
         let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
+        let nib = UINib(nibName: LoadingView.className, bundle: bundle)
         let nibView = nib.instantiate(withOwner: self, options: nil).first
 
         return nibView as! UIView

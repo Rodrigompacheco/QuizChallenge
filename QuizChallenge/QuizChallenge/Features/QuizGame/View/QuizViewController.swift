@@ -16,7 +16,7 @@ class QuizViewController: UIViewController, KeyboardObservable {
     
     @IBOutlet weak var answersTableView: UITableView! {
         didSet {
-            answersTableView.register(UINib(nibName: "AnswerTableViewCell", bundle: nil), forCellReuseIdentifier: "AnswerTableViewCell") //.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+            answersTableView.register(UINib(nibName: AnswerTableViewCell.className, bundle: nil), forCellReuseIdentifier: AnswerTableViewCell.className)
         }
     }
     @IBOutlet weak var questionLabel: UILabel!
@@ -79,7 +79,7 @@ extension QuizViewController: UITableViewDataSource {
         let defaultCell = UITableViewCell()
         guard let presenter = presenter else { return  defaultCell}
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerTableViewCell") as? AnswerTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: AnswerTableViewCell.className) as? AnswerTableViewCell
         cell?.setup(answer: presenter.getAnswer(at: indexPath.row))
         
         return cell ?? defaultCell
