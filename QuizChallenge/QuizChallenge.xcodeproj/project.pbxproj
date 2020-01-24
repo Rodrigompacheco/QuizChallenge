@@ -19,6 +19,8 @@
 		41E8423423DA4B4F00303FA7 /* QuizPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8423323DA4B4F00303FA7 /* QuizPresenter.swift */; };
 		41E8423623DA5BEB00303FA7 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E8423523DA5BEB00303FA7 /* QuizViewController.xib */; };
 		41E8423A23DA655700303FA7 /* CustomColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41E8423923DA655700303FA7 /* CustomColors.xcassets */; };
+		41E8423F23DA99C400303FA7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8423E23DA99C400303FA7 /* Utils.swift */; };
+		41E8424123DA9E8800303FA7 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8424023DA9E8800303FA7 /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		41E8423323DA4B4F00303FA7 /* QuizPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPresenter.swift; sourceTree = "<group>"; };
 		41E8423523DA5BEB00303FA7 /* QuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
 		41E8423923DA655700303FA7 /* CustomColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = CustomColors.xcassets; sourceTree = "<group>"; };
+		41E8423E23DA99C400303FA7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		41E8424023DA9E8800303FA7 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 		41409BB323DA480E008671C6 /* QuizChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				41E8423B23DA815E00303FA7 /* CustomComponents */,
 				41409BCB23DA4887008671C6 /* DataSource */,
 				41409BCC23DA488E008671C6 /* Fonts */,
 				41409BC923DA4864008671C6 /* Features */,
@@ -102,6 +107,7 @@
 			children = (
 				41409BB423DA480E008671C6 /* AppDelegate.swift */,
 				41409BB623DA480E008671C6 /* SceneDelegate.swift */,
+				41E8423E23DA99C400303FA7 /* Utils.swift */,
 				41409BBD23DA480F008671C6 /* Assets.xcassets */,
 				41E8423923DA655700303FA7 /* CustomColors.xcassets */,
 			);
@@ -163,6 +169,14 @@
 				41E8423523DA5BEB00303FA7 /* QuizViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		41E8423B23DA815E00303FA7 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				41E8424023DA9E8800303FA7 /* CustomTextField.swift */,
+			);
+			path = CustomComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,7 +253,9 @@
 			files = (
 				41409BD723DA4987008671C6 /* WordsApiProvider.swift in Sources */,
 				41409BB923DA480E008671C6 /* QuizViewController.swift in Sources */,
+				41E8423F23DA99C400303FA7 /* Utils.swift in Sources */,
 				41E8423223DA4AD300303FA7 /* Quiz.swift in Sources */,
+				41E8424123DA9E8800303FA7 /* CustomTextField.swift in Sources */,
 				41409BD523DA496F008671C6 /* WordsApiGetEndpoint.swift in Sources */,
 				41409BD323DA494F008671C6 /* WordsApiError.swift in Sources */,
 				41409BB523DA480E008671C6 /* AppDelegate.swift in Sources */,

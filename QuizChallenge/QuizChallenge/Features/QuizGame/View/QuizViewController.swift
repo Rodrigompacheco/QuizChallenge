@@ -7,13 +7,14 @@
 //
 
 import UIKit
-//https://futemax.fm/assistir-juventude-x-internacional-ao-vivo-hd-23-01-2020-gratis/
+
 class QuizViewController: UIViewController {
     
     @IBOutlet weak var answersTableView: UITableView!
     @IBOutlet weak var numberOfHitsLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startTimerButton: UIButton!
+    @IBOutlet weak var insertWordTextField: CustomTextField!
     
     var presenter: QuizPresenter?
 
@@ -22,6 +23,12 @@ class QuizViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         presenter = QuizPresenter()
+        setup()
+    }
+    
+    private func setup() {
+        startTimerButton.layer.cornerRadius = bottomButtonCornerRadius
+        insertWordTextField.layer.cornerRadius = textFieldCornerRadius
     }
 
     @IBAction func startOrStopTimer(_ sender: Any) {
