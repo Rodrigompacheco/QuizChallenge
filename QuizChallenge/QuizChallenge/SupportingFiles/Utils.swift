@@ -19,3 +19,8 @@ let loadingViewTag: Int = 1
 
 // Mark: CoundDownTimer
 let initialTimeSecods: Int = 300
+
+// Mark: Strings
+let startTitleButton: String = "Start"
+let resetTitleButton: String = "Reset"
+
