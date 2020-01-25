@@ -24,6 +24,8 @@ let initialTimeSeconds: Int = 300
 let startTitleButton: String = "Start"
 let resetTitleButton: String = "Reset"
 /// Dialog Messages
+let defaultOkButton: String = "Ok"
+
 let isNotAKeywordTitle: String = "Ops!"
 let isNotAKeywordMessage: String = "This answer isn't a keyword"
 

@@ -96,7 +96,7 @@ class QuizPresenter {
         if !isTimerRunning {
             delegate?.showDialog(with: mustStartTimerTitle,
                                  message: mustStartTimerMessage,
-                                 titleButton: "Ok")
+                                 titleButton: defaultOkButton)
             return
         }
         
@@ -104,7 +104,7 @@ class QuizPresenter {
         if userAnswers.contains(trimmedAnswer) {
             delegate?.showDialog(with: wordAlreadyAddedTitle,
                                  message: wordAlreadyAddedMessage,
-                                 titleButton: "Ok")
+                                 titleButton: defaultOkButton)
             return
         }
         
