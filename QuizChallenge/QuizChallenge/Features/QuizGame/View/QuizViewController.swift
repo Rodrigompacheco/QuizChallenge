@@ -73,6 +73,7 @@ class QuizViewController: UIViewController, KeyboardObservable {
     }
 }
 
+// MARK: UITableViewDataSource
 extension QuizViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let presenter = presenter else { return 0 }
@@ -91,6 +92,7 @@ extension QuizViewController: UITableViewDataSource {
     }
 }
 
+// MARK: UITextFieldDelegate
 extension QuizViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text {
@@ -100,6 +102,7 @@ extension QuizViewController: UITextFieldDelegate {
     }
 }
 
+// MARK: QuizPresenterDelegate
 extension QuizViewController: QuizPresenterDelegate {
     func updateTableViewStatus(to hidden: Bool) {
         answersTableView.isHidden = hidden
@@ -163,6 +166,7 @@ extension QuizViewController: QuizPresenterDelegate {
     }
 }
 
+// MARK: UIAlertDelegate
 extension QuizViewController: UIAlertDelegate {
     func finishedAction() {
         delegate?.dialogButtonPressed()

@@ -11,11 +11,6 @@ import UIKit
 class AnswerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var answerLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
     func setup(answer: String) {
         answerLabel.text = answer
