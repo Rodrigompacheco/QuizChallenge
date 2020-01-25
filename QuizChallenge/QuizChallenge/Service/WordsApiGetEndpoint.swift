@@ -22,13 +22,6 @@ extension WordsApiGetEndpoint {
         }
     }
 
-    var headers: [String: String] {
-        switch self {
-        case .words:
-            return ["Content-Type": "Application/json"]
-        }
-    }
-
     func makeRequest() -> URLRequest? {
         guard let url = URL(string: WordsApiGetEndpoint.baseUrl + path) else {
             return nil
@@ -36,10 +29,6 @@ extension WordsApiGetEndpoint {
 
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-
-//        for header in headers {
-//            request.addValue(header.value, forHTTPHeaderField: header.key)
-//        }
 
         return request
     }
