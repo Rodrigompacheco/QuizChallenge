@@ -94,30 +94,23 @@ class QuizPresenter {
         return userAnswers[index]
     }
     
-    func validateAnswer(answer: String) {
-        guard let quiz = quiz else { return }
-        
-        if !isTimerRunning {
-            delegate?.showDialog(with: mustStartTimerTitle,
-                                 message: mustStartTimerMessage,
-                                 titleButton: defaultOkButton)
-            return
-        }
+    func validateAnswer(answer: String) -> Bool {
+        guard let quiz = quiz else { return false }
         
         let trimmedAnswer = answer.trimmingCharacters(in: .whitespaces).lowercased()
         if userAnswers.contains(trimmedAnswer) {
             delegate?.showDialog(with: wordAlreadyAddedTitle,
                                  message: wordAlreadyAddedMessage,
                                  titleButton: defaultOkButton)
-            return
+            return false
         }
         
         if quiz.answers.contains(trimmedAnswer) {
             userAnswers.append(trimmedAnswer)
             numberOfHits += 1
-            delegate?.updateTableViewStatus(to: false)
-            updateComponents()
+            return true
         }
+        return false
     }
     
     func checkIfIsOver() -> Bool {
@@ -133,7 +126,18 @@ extension QuizPresenter: QuizViewControllerDelegate {
     }
     
     func wordTyped(word: String) {
-        validateAnswer(answer: word)
+        if !isTimerRunning {
+            delegate?.showDialog(with: mustStartTimerTitle,
+                                 message: mustStartTimerMessage,
+                                 titleButton: defaultOkButton)
+            return
+        }
+        
+        if validateAnswer(answer: word) {
+            delegate?.updateTableViewStatus(to: false)
+            updateComponents()
+        }
+        
         if checkIfIsOver() {
             isToReset = true
             delegate?.stopTimer()
