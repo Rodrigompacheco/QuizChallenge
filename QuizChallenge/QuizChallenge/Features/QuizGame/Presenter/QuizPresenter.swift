@@ -15,15 +15,24 @@ protocol QuizPresenterDelegate: class {
     func hideLoadingView()
     func updateQuestion(to question: String)
     func updateTextButton(to text: String)
+    func updateNumberOfHits(to text: String)
+    func updateTableViewStatus(to hidden: Bool)
     func startTimer()
     func stopTimer()
     func resetTimer()
+    func cleanTextField()
+    func showDialog(with title: String, message: String, titleButton: String)
 }
 
 class QuizPresenter {
     
     var quiz: Quiz?
-    var isTimerRunnig = false
+    var totalAnswers: Int = 0
+    var userAnswers: [String] = []
+    var isTimerRunning = false
+    var isToReset = false
+    var numberOfHits = 0
+    
     weak var delegate: QuizPresenterDelegate?
     
     init() {}
@@ -49,40 +58,104 @@ class QuizPresenter {
             self.delegate?.hideLoadingView()
             if let quiz = self.quiz {
                 self.delegate?.updateQuestion(to: quiz.question)
+                self.totalAnswers = quiz.answers.count
             }
-            self.delegate?.reloadAnswers()
         }
+    }
+    
+    private func resetQuiz() {
+        delegate?.resetTimer()
+        delegate?.updateTextButton(to: startTitleButton)
+        delegate?.updateTableViewStatus(to: true)
+        userAnswers = []
+        numberOfHits = 0
+        load()
+        updateComponents()
+        isTimerRunning = false
+        isToReset = false
+    }
+    
+    private func updateComponents() {
+        delegate?.cleanTextField()
+        delegate?.reloadAnswers()
+        delegate?.updateNumberOfHits(to: "\(numberOfHits)/\(totalAnswers)")
     }
     
     func getNumberOfAnswers() -> Int {
-        guard let quiz = quiz else { return 0 }
-        return quiz.answers.count
+        return userAnswers.count
     }
     
     func getAnswer(at index: Int) -> String {
-        if let quiz = quiz, let answer = quiz.getAnswer(at: index) {
-            return answer
+        guard index < userAnswers.count else { return "" }
+        return userAnswers[index]
+    }
+    
+    func validateAnswer(answer: String) {
+        guard let quiz = quiz else { return }
+        
+        if !isTimerRunning {
+            delegate?.showDialog(with: mustStartTimerTitle,
+                                 message: mustStartTimerMessage,
+                                 titleButton: defaultOkButton)
+            return
         }
-        return ""
+        
+        let trimmedAnswer = answer.trimmingCharacters(in: .whitespaces).lowercased()
+        if userAnswers.contains(trimmedAnswer) {
+            delegate?.showDialog(with: wordAlreadyAddedTitle,
+                                 message: wordAlreadyAddedMessage,
+                                 titleButton: defaultOkButton)
+            return
+        }
+        
+        if quiz.answers.contains(trimmedAnswer) {
+            userAnswers.append(trimmedAnswer)
+            numberOfHits += 1
+            delegate?.updateTableViewStatus(to: false)
+            updateComponents()
+        }
+    }
+    
+    func checkIfIsOver() -> Bool {
+        return userAnswers.count == totalAnswers ? true : false
     }
 }
 
 extension QuizPresenter: QuizViewControllerDelegate {
+    func dialogButtonPressed() {
+        if isToReset {
+            resetQuiz()
+        }
+    }
+    
+    func wordTyped(word: String) {
+        validateAnswer(answer: word)
+        if checkIfIsOver() {
+            isToReset = true
+            delegate?.stopTimer()
+            delegate?.showDialog(with: finishQuizTitle,
+                                 message: finishQuizMessage,
+                                 titleButton: finishQuizBtnTitle)
+        }
+    }
+    
     func startTimerPressed() {
-        if isTimerRunnig {
-            delegate?.resetTimer()
-            delegate?.updateTextButton(to: startTitleButton)
-            isTimerRunnig = false
+        if isTimerRunning {
+            resetQuiz()
         } else {
             delegate?.startTimer()
             delegate?.updateTextButton(to: resetTitleButton)
-            isTimerRunnig = true
+            isTimerRunning = true
         }
     }
 }
 
 extension QuizPresenter: CountDownTimerDelegate {
     func timeOut() {
-        //Body
+        isToReset = true
+        delegate?.stopTimer()
+        delegate?.showDialog(with: notFinishQuizTitle,
+                             message: notFinishedDialogMessage(userAnswers: userAnswers.count, totalAnswers: totalAnswers),
+                             titleButton: notFinishQuizBtnTitle)
     }
 }

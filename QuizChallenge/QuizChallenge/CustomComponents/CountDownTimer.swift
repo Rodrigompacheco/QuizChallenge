@@ -14,7 +14,7 @@ protocol CountDownTimerDelegate: class {
 
 class CountDownTimer: UILabel {
         
-    var seconds: Int = initialTimeSecods
+    var seconds: Int = initialTimeSeconds
     var timer = Timer()
     var isTimerRunning = false
     
@@ -32,7 +32,7 @@ class CountDownTimer: UILabel {
     
     func resetTimer() {
         timer.invalidate()
-        seconds = initialTimeSecods
+        seconds = initialTimeSeconds
         self.text = timeString(time: TimeInterval(seconds))
         isTimerRunning = false
     }

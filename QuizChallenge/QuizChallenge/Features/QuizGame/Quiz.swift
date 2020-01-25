@@ -11,7 +11,7 @@ import Foundation
 struct Quiz: Codable {
     
     let question: String
-    let answers: [String]
+    var answers: [String]
     
     // MARK: - Codable
     private enum CodingKeys: String, CodingKey {

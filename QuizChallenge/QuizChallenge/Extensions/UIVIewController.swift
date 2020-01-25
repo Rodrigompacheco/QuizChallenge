@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol UIAlertDelegate: class {
+    func finishedAction()
+}
+
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
@@ -17,5 +21,17 @@ extension UIViewController {
 
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+
+extension UIViewController {
+    func showSimpleAlert(uiAlertDelegate: UIAlertDelegate?, withTitle tile: String?, andMessage message: String, buttonTitle: String) {
+        let alert = UIAlertController(title: tile ?? "", message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: buttonTitle, style: .default, handler: { (action: UIAlertAction!) in
+            uiAlertDelegate?.finishedAction()
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
