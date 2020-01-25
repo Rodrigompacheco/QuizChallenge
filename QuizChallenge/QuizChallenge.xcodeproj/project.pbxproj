@@ -30,6 +30,9 @@
 		41E8425E23DB5A7500303FA7 /* NSObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8425D23DB5A7500303FA7 /* NSObjectExtension.swift */; };
 		41E8426023DB61EB00303FA7 /* UIVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8425F23DB61EB00303FA7 /* UIVIewController.swift */; };
 		41E8426423DB735000303FA7 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E8426223DB6ED600303FA7 /* CountDownTimer.swift */; };
+		41E8426923DBF91B00303FA7 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 41E8426623DBF91A00303FA7 /* SF-Pro-Display-Semibold.otf */; };
+		41E8426A23DBF91B00303FA7 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 41E8426723DBF91A00303FA7 /* SF-Pro-Display-Bold.otf */; };
+		41E8426B23DBF91B00303FA7 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 41E8426823DBF91B00303FA7 /* SF-Pro-Display-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		41E8425D23DB5A7500303FA7 /* NSObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectExtension.swift; sourceTree = "<group>"; };
 		41E8425F23DB61EB00303FA7 /* UIVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewController.swift; sourceTree = "<group>"; };
 		41E8426223DB6ED600303FA7 /* CountDownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
+		41E8426623DBF91A00303FA7 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
+		41E8426723DBF91A00303FA7 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
+		41E8426823DBF91B00303FA7 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +98,6 @@
 			children = (
 				41E8423B23DA815E00303FA7 /* CustomComponents */,
 				41E8425823DAD31000303FA7 /* Extensions */,
-				41409BCC23DA488E008671C6 /* Fonts */,
 				41409BC923DA4864008671C6 /* Features */,
 				41409BC823DA485B008671C6 /* Service */,
 				41409BCD23DA489A008671C6 /* Storyboards */,
@@ -123,6 +128,7 @@
 		41409BCA23DA486E008671C6 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				41409BCC23DA488E008671C6 /* Fonts */,
 				41409BB423DA480E008671C6 /* AppDelegate.swift */,
 				41409BB623DA480E008671C6 /* SceneDelegate.swift */,
 				41E8425B23DB598E00303FA7 /* KeyboardObservable.swift */,
@@ -136,6 +142,9 @@
 		41409BCC23DA488E008671C6 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				41E8426723DBF91A00303FA7 /* SF-Pro-Display-Bold.otf */,
+				41E8426823DBF91B00303FA7 /* SF-Pro-Display-Regular.otf */,
+				41E8426623DBF91A00303FA7 /* SF-Pro-Display-Semibold.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -283,8 +292,11 @@
 				41E8423A23DA655700303FA7 /* CustomColors.xcassets in Resources */,
 				41409BC123DA480F008671C6 /* LaunchScreen.storyboard in Resources */,
 				41E8424423DAA2A200303FA7 /* AnswerTableViewCell.xib in Resources */,
+				41E8426923DBF91B00303FA7 /* SF-Pro-Display-Semibold.otf in Resources */,
 				41E8424F23DAB94F00303FA7 /* LoadingView.xib in Resources */,
 				41409BBE23DA480F008671C6 /* Assets.xcassets in Resources */,
+				41E8426A23DBF91B00303FA7 /* SF-Pro-Display-Bold.otf in Resources */,
+				41E8426B23DBF91B00303FA7 /* SF-Pro-Display-Regular.otf in Resources */,
 				41E8423623DA5BEB00303FA7 /* QuizViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
