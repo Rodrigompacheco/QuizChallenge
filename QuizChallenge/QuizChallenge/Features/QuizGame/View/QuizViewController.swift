@@ -10,6 +10,8 @@ import UIKit
 
 protocol QuizViewControllerDelegate: class {
     func startTimerPressed()
+    func wordTyped(word: String)
+    func dialogButtonPressed()
 }
 
 class QuizViewController: UIViewController, KeyboardObservable {
@@ -48,6 +50,7 @@ class QuizViewController: UIViewController, KeyboardObservable {
     private func setupComponents() {
         answersTableView.dataSource = self
         insertWordTextField.delegate = self
+        updateTableViewStatus(to: true)
         startTimerButton.layer.cornerRadius = bottomButtonCornerRadius
         insertWordTextField.layer.cornerRadius = textFieldCornerRadius
     }
@@ -91,13 +94,16 @@ extension QuizViewController: UITableViewDataSource {
 extension QuizViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let text = textField.text {
-            presenter?.validateAnswer(answer: text)
+            delegate?.wordTyped(word: text)
         }
         return true
     }
 }
 
 extension QuizViewController: QuizPresenterDelegate {
+    func updateTableViewStatus(to hidden: Bool) {
+        answersTableView.isHidden = hidden
+    }
     
     func startTimer() {
         timerLabel.startTimer()
@@ -116,7 +122,8 @@ extension QuizViewController: QuizPresenterDelegate {
     }
     
     func showDialog(with title: String, message: String, titleButton: String) {
-        self.showSimpleAlert(withTitle: title, andMessage: message, buttonTitle: titleButton)
+        insertWordTextField.resignFirstResponder()
+        self.showSimpleAlert(uiAlertDelegate: self, withTitle: title, andMessage: message, buttonTitle: titleButton)
     }
     
     func updateNumberOfHits(to text: String) {
@@ -153,5 +160,11 @@ extension QuizViewController: QuizPresenterDelegate {
     
     func reloadAnswers() {
         answersTableView.reloadData()
+    }
+}
+
+extension QuizViewController: UIAlertDelegate {
+    func finishedAction() {
+        delegate?.dialogButtonPressed()
     }
 }
