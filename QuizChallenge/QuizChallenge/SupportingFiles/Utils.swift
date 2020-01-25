@@ -42,6 +42,9 @@ let finishQuizBtnTitle: String = "Play Again"
 let notFinishQuizTitle: String = "Time finished"
 let notFinishQuizBtnTitle: String = "Try Again"
 
+let errorFetchDataTitle: String = "Fail"
+let errorFetchDataMessage: String = "There was an error downloading the data. Check your internet connection."
+
 func notFinishedDialogMessage(userAnswers: Int, totalAnswers: Int) -> String {
     return "Sorry, time is up! You got \(userAnswers) out of \(totalAnswers) answers."
 }

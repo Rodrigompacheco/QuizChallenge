@@ -46,8 +46,11 @@ class QuizPresenter {
             case .success(let quiz):
                 self?.setup(with: quiz)
             case .failure:
-                print("FALHO O LOAD")
+                self?.isToReset = true
                 self?.delegate?.hideLoadingView()
+                self?.delegate?.showDialog(with: errorFetchDataTitle,
+                                           message: errorFetchDataMessage,
+                                           titleButton: defaultOkButton)
             }
         }
     }
@@ -59,6 +62,7 @@ class QuizPresenter {
             if let quiz = self.quiz {
                 self.delegate?.updateQuestion(to: quiz.question)
                 self.totalAnswers = quiz.answers.count
+                self.delegate?.updateNumberOfHits(to: "\(self.numberOfHits)/\(self.totalAnswers)")
             }
         }
     }
